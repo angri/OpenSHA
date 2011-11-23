@@ -315,8 +315,8 @@ public class PointToLineSource extends ProbEqkSource implements
                 }
                 // if it's smaller set point surface at hypocentral depth
                 else{
-                	PointSurface surf = new PointSurface(loc.getLatitude(),loc.getLongitude(),defaultHypoDepth);
-                	rupture.setRuptureSurface(surf);
+                    Location pointSurfLoc = new Location(loc.getLatitude(),loc.getLongitude(),defaultHypoDepth);
+                    rupture.setPointSurface(pointSurfLoc, strike, dip);
                 }
 
                 // add the rupture to the list and save the rate in case the
